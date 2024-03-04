@@ -16,7 +16,6 @@ public class PoplarActlCmd implements Callable<String> {
         System.exit(exitCode);
     }
 
-    @Override
     public String call() throws Exception {
         String msg = "poplar-actl using picocli";
         System.out.println(msg);
