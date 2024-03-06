@@ -8,10 +8,7 @@ import java.util.concurrent.Callable;
  * @author chrischen
  */
 @CommandLine.Command(name = "stop")
-public class ActlStopCmd implements Callable<String> {
-
-    @CommandLine.Parameters(index = "0")
-    private String serviceAlias;
+public class ActlStopCmd extends ActlBase implements Callable<String> {
 
     @Override
     public String call() throws Exception {

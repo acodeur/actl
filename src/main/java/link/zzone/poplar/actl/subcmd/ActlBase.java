@@ -10,5 +10,5 @@ import picocli.CommandLine;
 public class ActlBase {
 
     @CommandLine.Parameters(index = "0")
-    private String serviceAlias;
+    private String service;
 }

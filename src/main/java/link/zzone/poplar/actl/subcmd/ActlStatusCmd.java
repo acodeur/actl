@@ -12,7 +12,7 @@ public class ActlStatusCmd extends ActlBase implements Callable<String> {
 
     @Override
     public String call() throws Exception {
-        System.out.println("ActlStatusCmd" + super.getServiceAlias());
+        System.out.println("ActlStatusCmd" + super.getService());
         return null;
     }
 }

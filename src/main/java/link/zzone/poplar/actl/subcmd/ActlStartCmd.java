@@ -8,7 +8,7 @@ import java.util.concurrent.Callable;
  * @author chrischen
  */
 @CommandLine.Command(name = "start")
-public class ActlStartCmd implements Callable<String> {
+public class ActlStartCmd extends ActlBase implements Callable<String> {
 
     @CommandLine.Option(names = {"-t", "--template"}, description = "template for service to start")
     private String template;
