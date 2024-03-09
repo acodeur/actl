@@ -2,4 +2,40 @@ syntax = "proto3";
 
 option java_generic_services = true;
 option java_multiple_files = true;
-option java_package = "link.zzone.poplar.actl";
+option java_package = "link.zzone.poplar.actl.grpc";
+
+import "google/protobuf/wrappers.proto";
+import "google/protobuf/timestamp.proto";
+
+service PoplarService {
+  rpc startLeaf(LeafStartRequest) returns (LeafResponse);
+  rpc stopLeaf(LeafStopRequest) returns (LeafResponse);
+  rpc statusLeaf(LeafStatusRequest) returns (LeafResponse);
+  rpc restartLeaf(LeafRestartRequest) returns (LeafResponse);
+  rpc listLeaf(LeafListRequest) returns (LeafResponse);
+}
+
+message LeafResponse {
+  string message = 1;
+}
+
+message LeafStartRequest {
+  string name = 1;
+  google.protobuf.Timestamp expire = 2;
+}
+
+message LeafStopRequest {
+  string name = 1;
+}
+
+message LeafStatusRequest {
+  string name = 1;
+}
+
+message LeafRestartRequest {
+  string name = 1;
+}
+
+message LeafListRequest {
+  string regex = 1;
+}
