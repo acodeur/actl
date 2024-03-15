@@ -5,10 +5,7 @@ import io.grpc.ManagedChannelBuilder;
 import link.zzone.poplar.actl.grpc.LeafListRequest;
 import link.zzone.poplar.actl.grpc.LeafResponse;
 import link.zzone.poplar.actl.grpc.PoplarServiceGrpc;
-import link.zzone.poplar.actl.subcmd.ActlRestartCmd;
-import link.zzone.poplar.actl.subcmd.ActlStartCmd;
-import link.zzone.poplar.actl.subcmd.ActlStatusCmd;
-import link.zzone.poplar.actl.subcmd.ActlStopCmd;
+import link.zzone.poplar.actl.subcmd.*;
 import picocli.CommandLine;
 
 import java.util.Objects;
@@ -18,7 +15,8 @@ import java.util.concurrent.Callable;
  * @author chrischen
  */
 @CommandLine.Command(name = "actl", description = "Actl ConTroL for poplar", subcommands = {
-        ActlStartCmd.class, ActlStatusCmd.class, ActlStopCmd.class, ActlRestartCmd.class
+        ActlStartCmd.class, ActlStatusCmd.class, ActlStopCmd.class, ActlRestartCmd.class,
+        ActlListCmd.class
 })
 public class PoplarActlCmd implements Callable<String> {
 
